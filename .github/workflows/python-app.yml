@@ -39,4 +39,4 @@ jobs:
         pytest
     - name: Docker 
       run: |
-        docker build .
+        docker build -t game .
