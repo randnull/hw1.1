@@ -49,6 +49,7 @@ jobs:
       run: |
         docker save -o game-im.tar game
     - name: artifact
-      run: |
+      uses: actions/upload-artifact@v2
+      with:
         name: game-im
         path: game-im.tar
