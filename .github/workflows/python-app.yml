@@ -45,3 +45,10 @@ jobs:
       with:
         name: pytest-output
         path: pytest_output.txt
+    - name: Save docker
+      run: |
+        docker save -o game-im.tar game
+    - name: artifact
+      run: |
+        name: game-im
+        path: game-im.tar
