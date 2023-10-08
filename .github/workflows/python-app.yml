@@ -36,7 +36,12 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest
+        pytest > pytest_output.txt
     - name: Docker 
       run: |
         docker build -t game .
+    - name: Save pytest
+      uses: actions/upload-artifact@v3
+      with:
+        name: pytest-output
+        path: pytest_output.txt
